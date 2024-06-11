@@ -8,7 +8,6 @@ import retrofit2.adapter.guava.GuavaCallAdapterFactory;
 /**
  * @author liuziyuan
  */
-@Component
 public class GuavaCallAdapterFactoryBuilder extends BaseCallAdapterFactoryBuilder {
 
     @Override

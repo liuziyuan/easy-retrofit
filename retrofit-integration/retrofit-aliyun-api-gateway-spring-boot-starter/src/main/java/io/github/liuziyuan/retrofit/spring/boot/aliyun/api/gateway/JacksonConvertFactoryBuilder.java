@@ -8,7 +8,6 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 /**
  * @author liuziyuan
  */
-@Component
 public class JacksonConvertFactoryBuilder extends BaseConverterFactoryBuilder {
 
     @Override
