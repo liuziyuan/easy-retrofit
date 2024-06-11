@@ -14,6 +14,13 @@ public class RetrofitAliyunApiGatewayProperties {
     private String appSecret;
     private Scheme scheme;
     private String host;
+    long connectionTimeout = 10000l;
+    long readTimeout = 10000l;
+    long writeTimeout = 10000l;
+
+    private Class<? extends OkHttpConfig> okHttpConfigClazz;
+
+
     /**
      * connectionPool
      **/
