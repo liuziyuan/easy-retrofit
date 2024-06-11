@@ -12,7 +12,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>retrofit-spring-boot-starter</artifactId>
-    <version>1.4.1</version>
+    <version>1.5.0</version>
     <description>Through annotation and configuration, based on DI, it is easy to use retrofit2 in SpringBoot</description>
 
     <properties>

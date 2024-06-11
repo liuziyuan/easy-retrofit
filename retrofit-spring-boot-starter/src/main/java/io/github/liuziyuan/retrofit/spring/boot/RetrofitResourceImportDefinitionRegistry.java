@@ -38,14 +38,18 @@ public class RetrofitResourceImportDefinitionRegistry implements ImportBeanDefin
     }
 
     void registerRetrofitAnnotationDefinitions(AnnotationAttributes annoAttrs, BeanDefinitionRegistry registry) throws IOException {
+        //scan and set Retrofit extension name and extension base api packages
+        SpringBootRetrofitExtensionScanner extensionScanner = new SpringBootRetrofitExtensionScanner();
+        Set<String> extensionNames = extensionScanner.scanExtensionName();
+        Set<String> baseApiPackages = extensionScanner.scanApiPackageName();
+
         //scan and set Retrofit resource packages
         RetrofitResourceScanner scanner = new RetrofitResourceScanner();
         List<String> basePackages = getBasePackages(annoAttrs);
+        basePackages.addAll(baseApiPackages);
         Set<Class<?>> retrofitBuilderClassSet = scanner.doScan(StringUtils.toStringArray(basePackages));
-        //scan adn set Retrofit extension packages
-        SpringBootRetrofitExtensionScanner extensionScanner = new SpringBootRetrofitExtensionScanner();
-        Set<String> extensionPackages = extensionScanner.scan();
-        RetrofitResourceScanner.RetrofitExtension retrofitExtension = scanner.doScanExtension(extensionPackages.toArray(new String[0]));
+
+        RetrofitResourceScanner.RetrofitExtension retrofitExtension = scanner.doScanExtension(extensionNames.toArray(new String[0]));
         RetrofitAnnotationBean annotationBean = new RetrofitAnnotationBean(basePackages, retrofitBuilderClassSet, retrofitExtension);
         // register RetrofitAnnotationBean
         if (!retrofitBuilderClassSet.isEmpty()) {

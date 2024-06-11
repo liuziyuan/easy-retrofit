@@ -2,7 +2,6 @@ package io.github.liuziyuan.retrofit.spring.boot;
 
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.util.ResourceUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,13 +13,23 @@ public class SpringBootRetrofitExtensionScanner {
 
     private static final String RETROFIT_EXTENSION_PROPERTIES = "META-INF/retrofit-extension.properties";
     private static final String RETROFIT_EXTENSION_CLASS_NAME = "retrofit.extension.name";
+    private static final String RETROFIT_BASE_API_PACKAGE = "retrofit.base.api.package";
 
     /**
      * Scan packageName
+     *
      * @return
      * @throws IOException
      */
-    public Set<String> scan() throws IOException {
+    public Set<String> scanExtensionName() throws IOException {
+        return getClassName(RETROFIT_EXTENSION_CLASS_NAME);
+    }
+
+    public Set<String> scanApiPackageName() throws IOException {
+        return getClassName(RETROFIT_BASE_API_PACKAGE);
+    }
+
+    private static Set<String> getClassName(String name) {
         // 获取类路径下的所有META-INF/spring.factories文件
         Set<String> extensionNames = new HashSet<>();
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
@@ -35,7 +44,7 @@ public class SpringBootRetrofitExtensionScanner {
                         String line;
                         while ((line = reader.readLine()) != null) {
                             String[] split = line.split("=");
-                            if (RETROFIT_EXTENSION_CLASS_NAME.equalsIgnoreCase(split[0].trim())) {
+                            if (name.equalsIgnoreCase(split[0].trim())) {
                                 String className = split[1].trim();
                                 int lastDotIndex = className.lastIndexOf('.');
                                 String packageName = className.substring(0, lastDotIndex);
@@ -49,4 +58,6 @@ public class SpringBootRetrofitExtensionScanner {
         }
         return extensionNames;
     }
+
+
 }
