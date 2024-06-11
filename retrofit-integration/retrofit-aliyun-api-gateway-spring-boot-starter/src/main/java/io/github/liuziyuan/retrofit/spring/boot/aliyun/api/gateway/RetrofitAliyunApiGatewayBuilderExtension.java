@@ -5,7 +5,7 @@ import io.github.liuziyuan.retrofit.core.builder.*;
 
 import java.util.ArrayList;
 
-public class ReactorRetrofitBuilderExtension implements RetrofitBuilderExtension {
+public class RetrofitAliyunApiGatewayBuilderExtension implements RetrofitBuilderExtension {
 
     @Override
     public boolean enable() {
