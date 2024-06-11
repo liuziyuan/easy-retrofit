@@ -12,7 +12,7 @@
     <packaging>pom</packaging>
     <description>easy retrofit integration</description>
     <artifactId>retrofit-integration</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
 
     <properties>
         <java.version>8</java.version>
@@ -26,6 +26,7 @@
     <modules>
         <module>retrofit-spring-boot-reactor-starter</module>
         <module>retrofit-spring-boot-web-starter</module>
+        <module>retrofit-aliyun-api-gateway-spring-boot-starter</module>
     </modules>
 
     <dependencyManagement>

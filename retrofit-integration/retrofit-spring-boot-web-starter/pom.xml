@@ -6,7 +6,7 @@
     <parent>
         <groupId>io.github.liuziyuan</groupId>
         <artifactId>retrofit-integration</artifactId>
-        <version>1.0.1</version>
+        <version>1.1.0</version>
     </parent>
 
     <artifactId>retrofit-spring-boot-web-starter</artifactId>
@@ -23,7 +23,7 @@
         <lombok.version>1.18.32</lombok.version>
         <commons.lang3.version>3.14.0</commons.lang3.version>
         <junit.version>4.13.2</junit.version>
-        <retrofit.spring.boot.starter.version>1.4.1</retrofit.spring.boot.starter.version>
+        <retrofit.spring.boot.starter.version>1.5.0</retrofit.spring.boot.starter.version>
         <retrofit.adapter.simple.body.version>1.1.0</retrofit.adapter.simple.body.version>
     </properties>
 
@@ -53,6 +53,11 @@
             <version>${retrofit.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.squareup.retrofit2</groupId>
+            <artifactId>adapter-rxjava3</artifactId>
+            <version>${retrofit.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.squareup.retrofit2</groupId>

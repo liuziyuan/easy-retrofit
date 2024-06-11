@@ -10,11 +10,56 @@
     </parent>
 
     <artifactId>retrofit-extension-aliyun-api-gateway-spring-boot-starter</artifactId>
+    <version>0.1.0</version>
+    <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <java.version>8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <java.source.version>${java.version}</java.source.version>
+        <java.target.version>${java.version}</java.target.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <retrofit.extension.aliyun.api.gateway.version>0.1.0</retrofit.extension.aliyun.api.gateway.version>
+        <lombok.version>1.18.22</lombok.version>
+        <spring.boot.version>2.0.0.RELEASE</spring.boot.version>
+        <commons.lang3.version>3.14.0</commons.lang3.version>
     </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${spring.boot.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <version>${spring.boot.version}</version>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.liuziyuan</groupId>
+            <artifactId>retrofit-spring-boot-starter</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.liuziyuan</groupId>
+            <artifactId>retrofit-extension-aliyun-api-gateway-core</artifactId>
+            <version>${retrofit.extension.aliyun.api.gateway.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>

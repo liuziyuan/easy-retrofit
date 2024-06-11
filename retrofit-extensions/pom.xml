@@ -22,7 +22,7 @@
         <java.target.version>${java.version}</java.target.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <retrofit.core.version>1.2.4</retrofit.core.version>
-        <retrofit.spring.boot.version>1.4.1</retrofit.spring.boot.version>
+        <retrofit.spring.boot.version>1.5.0</retrofit.spring.boot.version>
     </properties>
 
     <modules>

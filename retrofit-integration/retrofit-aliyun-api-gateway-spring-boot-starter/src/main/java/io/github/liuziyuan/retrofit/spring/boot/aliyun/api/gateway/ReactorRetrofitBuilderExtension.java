@@ -1,11 +1,11 @@
-package io.github.liuziyuan.retrofit.spring.boot.web;
+package io.github.liuziyuan.retrofit.spring.boot.aliyun.api.gateway;
 
 import io.github.liuziyuan.retrofit.core.RetrofitBuilderExtension;
 import io.github.liuziyuan.retrofit.core.builder.*;
 
 import java.util.ArrayList;
 
-public class WebRetrofitBuilderExtension implements RetrofitBuilderExtension {
+public class ReactorRetrofitBuilderExtension implements RetrofitBuilderExtension {
 
     @Override
     public boolean enable() {
@@ -35,7 +35,7 @@ public class WebRetrofitBuilderExtension implements RetrofitBuilderExtension {
 
     @Override
     public Class<? extends BaseOkHttpClientBuilder> globalOkHttpClientBuilderClazz() {
-        return null;
+        return OkHttpClientBuilder.class;
     }
 
     @Override

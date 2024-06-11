@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+io.github.liuziyuan.retrofit.extension.aliyun.api.gateway.spring.boot.RetrofitAliyunApiGatewayConfig
